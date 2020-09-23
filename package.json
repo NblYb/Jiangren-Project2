@@ -1,0 +1,15 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Pro2",
+  "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "webpack": "^4.44.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}
