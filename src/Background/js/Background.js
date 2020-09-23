@@ -6,7 +6,7 @@ class Background extends React.Component {
         
         if (this.props.currentHour <= 12) {
             return (
-                <div className="morning">Hello World!</div>
+                <div className="morning"></div>
             )
         }
 

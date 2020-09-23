@@ -1,12 +1,19 @@
 import React from 'react';
 import Background from '../../Background/js/Background'
+import MainContainer from '../../MainContainer/js/MainContainer'
 
 const currentHour = new Date();
 
-const App = () => {
-    return (
-        <Background currentHour = {currentHour.getHours()} />
-    );
+class App extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Background currentHour = {currentHour.getHours()}/>
+                <MainContainer/>
+            </React.Fragment>
+            
+        );
+    };
 };
 
 export default App;
