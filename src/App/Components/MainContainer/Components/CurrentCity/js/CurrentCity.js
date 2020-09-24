@@ -12,13 +12,15 @@ class CurrentCity extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            CurrentCity : "Melbourne",
             Weather: "Sunny",
             Temperature: "25.25",
             Humidity: "50%",
             Wind: "3.5",
         };
     };
+
+
+
 
     
     render() {
@@ -45,7 +47,7 @@ class CurrentCity extends React.Component {
                     </div>
                 </div>
                 <div className="Current_City_Name_container">
-                    <div className="Current_City_Name">{this.state.CurrentCity}</div>
+                    <div className="Current_City_Name">{this.props.CityDisplay}</div>
                     <div className="Current_City_Name_Underscore" />
                     <div className="Current_City_Weather_icon" />
                 </div>
