@@ -1,0 +1,55 @@
+.CityList_Container{
+    width: 30%;
+    height: calc(100% - 80px);
+    flex-shrink: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-right: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    .OtherCities{
+        width: 100%;
+        height: 25%;
+        font-size: 20px;
+    }
+    button{
+        width: 100%;
+        height: 25%;
+        display: flex;
+        cursor: pointer;
+    }
+}
+.CityList_CityName{
+    width: 50%;
+    height: 100%;
+    flex-shrink: 0;
+    text-align: start;
+    font-size: 15px;
+    line-height: 38px;
+}
+.CityList_Temperature{
+    width: 25%;
+    height: 100%;
+    flex-shrink: 0;
+    font-size: 15px;
+    line-height: 38px;
+}
+.CityList_WeatherIcon{
+    width: 25%;
+    height: 100%;
+    flex-shrink: 0;
+}
+.SunnyIcon{
+    background-image: url(../assets/img/sunny.svg);
+    background-size: 100% 100%;
+}
+.CloudyIcon{
+    background-image: url(../assets/img/cloudy.svg);
+    background-size: 100% 100%;
+}
+.RainyIcon{
+    background-image: url(../assets/img/rainy.svg);
+    background-size: 100% 100%;
+}

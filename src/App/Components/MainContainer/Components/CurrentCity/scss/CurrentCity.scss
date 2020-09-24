@@ -1,0 +1,137 @@
+.CityDisplay_morning{
+    width: 100%;
+    height: 50%;
+    z-index: 999;
+    position: relative;
+    background-image: url(../assets/img/morning.jpg);
+    background-size: cover;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+}
+.CityDisplay_morning::after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #96C9A8;
+    border-radius: 25px 25px 0 0;
+    opacity: 0.4
+}
+
+.CityDisplay_afternoon{
+    width: 100%;
+    height: 50%;
+    z-index: 999;
+    position: relative;
+    background-image: url(../assets/img/afternoon.jpg);
+    background-size: cover;
+    border-radius: 25px 25px 0 0;
+}
+.CityDisplay_night{
+    width: 100%;
+    height: 50%;
+    z-index: 999;
+    position: relative;
+    background-image: url(../assets/img/night.jpg);
+    background-size: cover;
+    border-radius: 25px 25px 0 0;
+}
+
+.Current_City_Display{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .Temperature{
+        width: 100%;
+        height: 40%;
+        flex-shrink: 0;
+        
+        font-size: 60px;
+        text-align: center;
+    }
+    .Weather{
+        width: 100%;
+        height: 20%;
+        display: block;
+        font-size: 25px;
+        text-align: center;
+        flex-shrink: 0;
+        margin-top: -10%;
+        span{
+            color: transparent;
+            display: inline;
+            font-size: 10px;
+        }
+    }
+    .Humidity{
+        width: calc(35% - 0.5px);
+        height: 20%;
+        margin-top: -5%;
+        margin-bottom: 5%;
+        padding-left: 10%;
+        padding-right: 5%;
+        flex-shrink: 0;
+        font-size: 20px;
+        text-align: center;
+        overflow-wrap: normal;
+        border-right: 1px solid #000;
+        :nth-child(1){
+            width: 100%;
+            height: 50%;
+        }
+        :nth-child(2){
+            width: 100%;
+            height: 50%;
+        }
+    }
+
+    .Wind{
+        width: calc(35% - 0.5px);
+        height: 20%;
+        margin-top: -5%;
+        margin-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 10%;
+        flex-shrink: 0;
+        font-size: 20px;
+        text-align: center;
+        overflow-wrap: normal;
+        :nth-child(1){
+            width: 100%;
+            height: 50%;
+        }
+        :nth-child(2){
+            width: 100%;
+            height: 50%;
+        }
+    }
+}
+
+.Current_City_Name_container{
+    width: 50%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    .Current_City_Name{
+        height: auto;
+        margin-top: 10%;
+        text-align: center;
+        font-size: 40px;
+    }
+    .Current_City_Name_Underscore{
+        width: 30%;
+        margin-left: 35%;
+        margin-top: -10%;
+        border-top: solid 2px black;
+    }
+    .Current_City_Weather_icon{
+        width: 30%;
+        height: 30%;
+        margin-top: 10%;
+        align-self: center;
+        background-image: url(../assets/img/sunny.svg);
+        background-size: 100% 100%;
+    }
+}
