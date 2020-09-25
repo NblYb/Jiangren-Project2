@@ -2,7 +2,7 @@ import React from 'react';
 import Background from '../Components/Background/js/Background'
 import MainContainer from '../Components/MainContainer/js/MainContainer'
 
-const currentHour = 8;
+const currentHour = new Date().getHours;
 
 class App extends React.Component {
     constructor(props) {

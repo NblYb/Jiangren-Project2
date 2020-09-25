@@ -3,6 +3,7 @@
     height: 50%;
     z-index: 999;
     position: relative;
+    flex-shrink: 0;
     background-image: url(../assets/img/morning.jpg);
     background-size: cover;
     border-radius: 25px 25px 0 0;
@@ -23,18 +24,25 @@
     height: 50%;
     z-index: 999;
     position: relative;
+    flex-shrink: 0;
     background-image: url(../assets/img/afternoon.jpg);
     background-size: cover;
     border-radius: 25px 25px 0 0;
+    display: flex;
+    color: snow;
 }
 .CityDisplay_night{
     width: 100%;
     height: 50%;
     z-index: 999;
     position: relative;
+    flex-shrink: 0;
     background-image: url(../assets/img/night.jpg);
-    background-size: cover;
+    background-size: auto;
+    background-position-y: 100%;
     border-radius: 25px 25px 0 0;
+    display: flex;
+    color: snow;
 }
 
 .Current_City_Display{
@@ -124,14 +132,23 @@
         width: 30%;
         margin-left: 35%;
         margin-top: -10%;
-        border-top: solid 2px black;
     }
     .Current_City_Weather_icon{
         width: 30%;
         height: 30%;
         margin-top: 10%;
         align-self: center;
+    }
+    .Clear{
         background-image: url(../assets/img/sunny.svg);
+        background-size: 100% 100%;
+    }
+    .Rain{
+        background-image: url(../assets/img/rainy.svg);
+        background-size: 100% 100%;
+    }
+    .Clouds{
+        background-image: url(../assets/img/cloudy.svg);
         background-size: 100% 100%;
     }
 }

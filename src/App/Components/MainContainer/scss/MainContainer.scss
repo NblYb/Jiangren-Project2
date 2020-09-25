@@ -14,10 +14,10 @@
 .MainContainer_afternoon{
     width: 640px;
     height: 480px;
-
+    background-color: #fff;
     position: absolute;
     display: flex;
-    
+    flex-wrap: wrap;
     border-radius: 25px;
     left: calc(50% - 320px);;
     top: calc(50% - 240px);
@@ -27,8 +27,11 @@
 .MainContainer_night{
     width: 640px;
     height: 480px;
+    background-color: #fff;
+
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
     border-radius: 25px;
     left: calc(50% - 320px);;
     top: calc(50% - 240px);

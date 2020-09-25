@@ -1,0 +1,36 @@
+.ForecastEachDayContainer{
+    width: 15%;
+    height: 75%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    .day{
+        width: 100%;
+        height: 20%;
+        flex-shrink: 0;
+        text-align: center;
+    }
+    .ForecastEachDayWeatherIcon{
+        width: 100%;
+        height: 50%;
+        flex-shrink: 0;
+    }
+    .ForecastEachDayTemperature{
+        width: 100%;
+        height: 30%;
+        flex-shrink: 0;
+        text-align: center;
+    }
+    .ClearIcon{
+        background-image: url(../assets/img/sunny.svg);
+        background-size: 100% 100%;
+    }
+    .CloudsIcon{
+        background-image: url(../assets/img/cloudy.svg);
+        background-size: 100% 100%;
+    }
+    .RainIcon{
+        background-image: url(../assets/img/rainy.svg);
+        background-size: 100% 100%;
+    }
+}

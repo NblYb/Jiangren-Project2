@@ -7,34 +7,27 @@ const DayPart = {
     "Night" : "CityDisplay_night",
 }
 
+// function fahrenheit_to_celsius(fahrenheit) {
+//     return String((parseFloat(fahrenheit) - 32)/1.8);
+// }
+
 class CurrentCity extends React.Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            Weather: "Sunny",
-            Temperature: "25.25",
-            Humidity: "50%",
-            Wind: "3.5",
-        };
-    };
-
-
-
-
     
+
+
     render() {
         return (
             <div className={DayPart[this.props.currentTime]}>
                 <div className="Current_City_Display">
-                    <div className="Temperature">{this.state.Temperature + '\u00b0'}</div>
-                    <div className="Weather">{this.state.Weather}<span>ab</span></div>
+                    <div className="Temperature">{this.props.currentCityWeather.current.temp + '\u00b0'}</div>
+                    <div className="Weather">{this.props.currentCityWeather.current.weather[0].main}<span>ab</span></div>
                     <div className="Humidity">
                         <div>
                             Humidity 
                         </div>
                         <div>
-                            {this.state.Humidity}
+                            {this.props.currentCityWeather.current.humidity}
                         </div>
                     </div>
                     <div className="Wind">
@@ -42,14 +35,14 @@ class CurrentCity extends React.Component {
                             Wind
                         </div>
                         <div>
-                            {this.state.Wind + " K/M"}
+                            {this.props.currentCityWeather.current.wind_speed + " K/M"}
                         </div>
                     </div>
                 </div>
                 <div className="Current_City_Name_container">
                     <div className="Current_City_Name">{this.props.CityDisplay}</div>
                     <div className="Current_City_Name_Underscore" />
-                    <div className="Current_City_Weather_icon" />
+                    <div className={"Current_City_Weather_icon " + this.props.currentCityWeather.current.weather[0].main}/>
                 </div>
             </div>
         )

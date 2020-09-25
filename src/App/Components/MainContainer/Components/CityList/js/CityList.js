@@ -5,24 +5,20 @@ import CityListButton from '../Components/CItyListButton/js/CityListButton'
 
 
 
-class CityList extends React.Component {
+function CityList(props) {
 
-    render() {
-
+        console.log(props.otherCityWeatherList);
         return(
             
             <div className="CityList_Container">
                 <div className="OtherCities">
                     Other Cities
                 </div>
-                <CityListButton onButtonClick={this.props.onCityListButtonClick} currentCityList={this.props.currentCityList[0]}/>
-                <CityListButton onButtonClick={this.props.onCityListButtonClick} currentCityList={this.props.currentCityList[1]}/>
-                <CityListButton onButtonClick={this.props.onCityListButtonClick} currentCityList={this.props.currentCityList[2]}/>
+                <CityListButton onButtonClick={props.onCityListButtonClick} currentCityList={props.currentCityList[0]} otherCityWeather={props.otherCityWeatherList[0]}/>
+                <CityListButton onButtonClick={props.onCityListButtonClick} currentCityList={props.currentCityList[1]} otherCityWeather={props.otherCityWeatherList[1]}/>
+                <CityListButton onButtonClick={props.onCityListButtonClick} currentCityList={props.currentCityList[2]} otherCityWeather={props.otherCityWeatherList[2]}/>
             </div>
         )
-
-    };
-
 
 }
 
