@@ -89,44 +89,32 @@ class MainContainer extends React.Component {
         this.OnCityListClick = this.OnCityListClick.bind(this);
     }
 
+
+
     componentDidMount() {
         const that = this;
-        async function getdata_CurrentCity(CityName) {
+
+        async function Getdata(CityName, ith_city="CurrentCityWeather") {
+            let StateToSet = ith_city === "CurrentCityWeather" ? "CurrentCityWeather" : `OtherCityWeather_${ith_city}`;
             await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + CityCoordinate[CityName][0] + "&lon=" + CityCoordinate[CityName][1] + "&units=metric&exclude=minutely,hourly&appid=29560aaafc26837d698516f31757b3bb", 
             {
-	            "method": "GET",
+                "method": "GET",
             })
             .then(function(resp) { return resp.json() })
             .then((data)=>{
                 console.log(data);
                 that.setState(
                     {
-                        CurrentCityWeather : data,
+                        [StateToSet] : data,
                     })
-
+    
             })
             .catch(err => {console.log(err);});
-        }
-        getdata_CurrentCity(this.state.CurrentCity);
-        async function getdata_OtherCity(CityName, ith_city) {
-            let StateSet = `OtherCityWeather_${ith_city}`;
-            await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + CityCoordinate[CityName][0] + "&lon=" + CityCoordinate[CityName][1] + "&units=metric&exclude=minutely,hourly&appid=29560aaafc26837d698516f31757b3bb", 
-            {
-	            "method": "GET",
-            })
-            .then(function(resp) { return resp.json() })
-            .then((data)=>{
-                console.log(data);
-                that.setState(
-                    {
-                        [StateSet] : data,
-                    })
-
-            })
-            .catch(err => {console.log(err);});
-        }
+        };
+        
+        Getdata(this.state.CurrentCity);
         for (let i = 0; i < 3 ; i++){
-            getdata_OtherCity(this.state.CurrentCityList[i], i);
+            Getdata(this.state.CurrentCityList[i], i);
         }
     }
 
@@ -140,42 +128,27 @@ class MainContainer extends React.Component {
             CurrentCityList : citylistOnClick,
         });
 
-        async function getdata_CurrentCity(CityName) {
+        async function Getdata(CityName, ith_city="CurrentCityWeather") {
+            let StateToSet = ith_city === "CurrentCityWeather" ? "CurrentCityWeather" : `OtherCityWeather_${ith_city}`;
             await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + CityCoordinate[CityName][0] + "&lon=" + CityCoordinate[CityName][1] + "&units=metric&exclude=minutely,hourly&appid=29560aaafc26837d698516f31757b3bb", 
             {
-	            "method": "GET",
+                "method": "GET",
             })
             .then(function(resp) { return resp.json() })
             .then((data)=>{
                 console.log(data);
                 that.setState(
                     {
-                        CurrentCityWeather : data,
+                        [StateToSet] : data,
                     })
-
+    
             })
             .catch(err => {console.log(err);});
-        }
-        getdata_CurrentCity(ClickedCity);
-        async function getdata_OtherCity(CityName, ith_city) {
-            let StateSet = `OtherCityWeather_${ith_city}`;
-            await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + CityCoordinate[CityName][0] + "&lon=" + CityCoordinate[CityName][1] + "&units=metric&exclude=minutely,hourly&appid=29560aaafc26837d698516f31757b3bb", 
-            {
-	            "method": "GET",
-            })
-            .then(function(resp) { return resp.json() })
-            .then((data)=>{
-                console.log(data);
-                that.setState(
-                    {
-                        [StateSet] : data,
-                    })
+        };
 
-            })
-            .catch(err => {console.log(err);});
-        }
+        Getdata(ClickedCity);
         for (let i = 0; i < 3 ; i++){
-            getdata_OtherCity(citylistOnClick[i], i);
+            Getdata(citylistOnClick[i], i);
         }
     }
 
